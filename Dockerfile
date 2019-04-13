@@ -7,6 +7,7 @@ RUN apt-get update
 RUN apt-get install -y \
     curl \
     unzip \
+    groff \
     git \
     vim \
     python3 \
@@ -20,6 +21,7 @@ RUN pip3 install \
 RUN curl ${tf_dl_url} -o tf.tar.gz
 RUN unzip tf.tar.gz
 RUN chmod u+x terraform && mv terraform /usr/local/bin/
+RUN rm -vtf.tar.gz
 
 # terragrunt
 RUN curl ${tg_dl_url} -o terragrunt
